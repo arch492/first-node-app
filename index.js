@@ -5,7 +5,7 @@ const args = require('yargs').argv;
 
 let homeContent = "";
 let projectContent = "";
-let registerationContent = "";
+let registrationContent = "";
 
 fs.readFile("home.html", (err, home) => {
   if (err) {
@@ -21,11 +21,11 @@ fs.readFile("project.html", (err, project) => {
   projectContent = project;
 });
 
-fs.readFile("registeration.html", (err, registeration) => {
+fs.readFile("registration.html", (err, registration) => {
   if (err) {
     throw err;
   }
-  registerationContent = registeration;
+  registrationContent = registration;
 });
 
 http
@@ -37,8 +37,8 @@ http
         response.write(projectContent);
         response.end();
         break;
-      case "/registeration":
-        response.write(registerationContent);
+      case "/registration":
+        response.write(registrationContent);
         response.end();
         break;
 
